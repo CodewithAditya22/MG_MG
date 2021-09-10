@@ -1,7 +1,16 @@
-
+`
 Important comment
 yellow = 2-5
 green  =>5
 red    =0-2
 Red color code "FF240A"
 Green color code "7EFF1F"
+if CHV >= 3:
+    sh1[CELL_VALUE].fill = PatternFill("solid", fgColor="7EFF1F")
+    sh1[CELL_VALUE] = CHV
+    WB.save(filename)
+elif CHV <= 2:
+    sh1[CELL_VALUE].fill = PatternFill("solid", fgColor="FF240A")
+    sh1[CELL_VALUE] = CHV
+    WB.save(filename)
+`
