@@ -121,3 +121,45 @@ ts = {"WK-WH-PRINT":{"S":"C8",
                     "M":"C176",
                     "L":"C177",
                     "XL":"C178"}}
+# -----------------------------------------------
+#                   DAL CHADAR
+# -----------------------------------------------
+dal_chadar = {"wk-chadar-multi-single":"C5",
+# ---------------wk-chadar-combo-01--------------
+              "wk-chadar-combo-01":"C17",
+# ---------------wk-chadar-blue strip------------
+              "wk-chadar-blue strip":"C27",
+# --------------------wk-chadar-m----------------
+              "wk-chadar-m,ulti-01":"C36",
+# ---------------WH-CHD-LIT YELLOW 02------------
+              "WH-CHD-LIT YELLOW 02":"C52",
+# ---------------WH-CHAD-LIGHT PINK 01-----------
+              "WH-CHAD-LIGHT PINK 01":"C68",
+# --------------------WH-BGP-CHDR-RED------------
+              "WH-BGP-CHDR-RED":"C84",
+# ---------------WH-BGP-CHDR-GRWHST--------------
+              "WH-BGP-CHDR-GRWHST":"C101",
+# ---------------WH-BGP-CHDR-RDWHST--------------
+              "WH-BGP-CHDR-RDWHST":"C116",
+# ---------------WH-BGP-CHDR-WHYT----------------
+              "WH-BGP-CHDR-WHYT":"C139",
+# ---------------WH-BGP-CHDR-YELLOW--------------
+              "WH-BGP-CHDR-YELLOW":"C155",
+# ---------------WH-BGP-CHDR-GREEN---------------
+              "WH-BGP-CHDR-GREEN":"C169",
+# ---------------WH-BGP-CHDR-PKWHST--------------
+              "WH-BGP-CHDR-PKWHST":"C191",
+# ---------------WH-BGP-CHDR-PPWHST--------------
+              "WH-BGP-CHDR-PPWHST":"C210",
+# ---------------WH-BGP-CHDR-PINK----------------
+              "WH-BGP-CHDR-PINK":"C230",
+# ---------------WH-BGP-CHDR-MULTI---------------
+              "WH-BGP-CHDR-MULTI":"C247",
+# ---------------WH-BGP-CHDR-BLUE----------------
+              "WH-BGP-CHDR-BLUE":"C262",
+# ---------------wk-chadar-orange white----------
+              "wk-chadar-orange white":"C273",
+# ---------------wk-chadar-MULTI-06--------------
+              "wk-chadar-MULTI-06":"C286",
+# ---------------WK-CHADAR-MULTI-04--------------
+              "WK-CHADAR-MULTI-04":"C299"}
