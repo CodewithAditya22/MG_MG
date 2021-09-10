@@ -1,4 +1,6 @@
 import openpyxl
+from openpyxl.styles import PatternFill
+
 from dict import ts, dal_chadar
 
 filename = "2020-06-14 - STOCK UPDATE.xlsx"
@@ -13,24 +15,41 @@ def pri_data_TSHIRT():
     1. SKUID
     2. Size
     """
-    def substract_value():
+    def substract_value_tshirt():
         '''substract value of sold quantity from stock then saves'''
-        subvalue_tshirt = int(input("Enter quantity of sold item"))
-        CHV_TSHIRT = data_TSHIRT - subvalue_tshirt
-        sh1[ts[SKUID_TSHIRT][SIZE_TSHIRT]].value = CHV_TSHIRT
+        subvalue_tshirt = int(input("Enter quantity of sold item: "))
+        CHVsub_TSHIRT = data_TSHIRT - subvalue_tshirt
+        sh1[ts[SKUID_TSHIRT][SIZE_TSHIRT]].value = CHVsub_TSHIRT
+        if CHVsub_TSHIRT >=5:
+                sh1[ts[SKUID_TSHIRT][SIZE_TSHIRT]].fill = PatternFill("solid", fgColor="7EFF1F")
+        elif CHVsub_TSHIRT >= 3:
+            sh1[ts[SKUID_TSHIRT][SIZE_TSHIRT]].fill = PatternFill("solid", fgColor="ffff00")
+
+        elif CHVsub_TSHIRT <= 2:
+            sh1[ts[SKUID_TSHIRT][SIZE_TSHIRT]].fill = PatternFill("solid", fgColor="FF240A")
         wb.save(filename)
+
+    def add_value_tshirt():
+        '''Add's quantity of new stock that has arrived then saves '''
+        addvalue_tshirt = int(input("Enter arrived quantity of item: "))
+        CHVadd_TSHIRT = data_TSHIRT+addvalue_tshirt
+        sh1[ts[SKUID_TSHIRT][SIZE_TSHIRT]].value = CHVadd_TSHIRT
+        wb.save(filename)
+
+
 
     SKUID_TSHIRT = input("Enter SKUID: ")
     SIZE_TSHIRT = input("Enter Size: ")
     data_TSHIRT = sh1[ts[SKUID_TSHIRT][SIZE_TSHIRT]].value
-    print("The current avaliable stock of", ts[SKUID_TSHIRT][SIZE_TSHIRT],
-          "is: ", data_TSHIRT)
+    print("The current avaliable stock is: ",data_TSHIRT)
     what_to_do_tshirt = input(
         """Enter "Stockup" if adding stock of enter "Selling" if packing order"""
     )
 
     if what_to_do_tshirt == "Selling":
-        substract_value()
+        substract_value_tshirt()
+    if what_to_do_tshirt == "Stockup":
+        add_value_tshirt()
 
 
 def pri_data_DAL_CHADAR():
