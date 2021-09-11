@@ -1,7 +1,7 @@
 import openpyxl
 from openpyxl.styles import PatternFill
 
-from dict import ts, dal_chadar
+from dict import ts, dal_chadar, saree
 try:
     filename = "2020-06-14 - STOCK UPDATE.xlsx"
 
@@ -115,6 +115,35 @@ try:
         if what_to_do_dalchadar == "Stockup":
             add_value_dalchadar()
 
+    def pri_data_saree():
+        def substract_value_saree():
+            """
+            substract value form a cell in dal chadar sheet
+            """
+            subvalue_saree = int(input("Enter quantity of sold item: "))
+            CHVsub_saree = data_saree - subvalue_saree
+            sh1[saree[SKUID_saree]].value = CHVsub_saree
+            if CHVsub_saree >= 5:
+                sh1[saree[SKUID_saree]].fill = PatternFill("solid",
+                                                           fgColor="7EFF1F")
+            elif CHVsub_saree >= 3:
+                sh1[saree[SKUID_saree]].fill = PatternFill("solid",
+                                                           fgColor="ffff00")
+
+            elif CHVsub_saree <= 2:
+                sh1[saree[SKUID_saree]].fill = PatternFill("solid",
+                                                           fgColor="FF240A")
+            wb.save(filename)
+
+        SKUID_saree = input("Enter SKUID: ")
+        data_saree = sh1[saree[SKUID_saree]].value
+        print("The current avaliable stock of is: ", data_saree)
+        what_to_do_saree = input(
+            """Enter "Stockup" if adding stock of enter "Selling" if packing order: """
+        )
+        if what_to_do_saree == "Selling":
+            substract_value_saree()
+
     #---------------------------------------------------------------
     User_sheet_input = input("Enter Sheet name: ")
     sh1 = wb[User_sheet_input]
@@ -122,5 +151,7 @@ try:
         pri_data_TSHIRT()
     if User_sheet_input == "DAL CHADAR":
         pri_data_DAL_CHADAR()
+    if User_sheet_input == "saree":
+        pri_data_saree()
 except Exception as e:
     print(e)
